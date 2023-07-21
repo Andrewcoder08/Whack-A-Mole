@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whack-A-Mole</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Whack-A-Mole! <span class="score">0</span></h1>
+    <!-- all the structure for game will be inside it -->
+    <div class="difficulty">
+      <button data-min="200" data-max="1000">Easy</button>
+      <button data-min="200" data-max="900">Medium</button>
+      <button data-min="200" data-max="500">Hard</button>
+    </div>
+    <button class="btn-style" onclick="startGame()">Start!</button>
+
+    <div class="game">
+      <div class="hole hole-1">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole-2">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole-3">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole-4">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole-5">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole-6">
+        <div class="mole"></div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

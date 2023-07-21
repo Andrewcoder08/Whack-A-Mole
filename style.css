@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+:root {
+  --theme: #ffc600;
+}
+html {
+  box-sizing: border-box;
+  font-size: 1rem;
+  background: var(--theme);
+  font-family: "Amatic SC", cursive;
+  text-align: center;
+}
+/* inherit the box sizing property from parent */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+/* good to style individually rather than on parent */
+h1 {
+  font-size: 4rem;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+.score {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0 2.5rem;
+  line-height: 1;
+  border-radius: 1rem;
+}
+
+.btn-style {
+  padding: 0.5rem;
+  font-family: "Amatic SC", cursive;
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-radius: 0.5rem;
+  width: 10%;
+  transition: all 0.2s ease;
+}
+.btn-style:hover {
+  background: black;
+  color: white;
+}
+.game {
+  width: 600px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+.difficulty button {
+  background: none;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Amatic SC", cursive;
+  padding: 0.5rem;
+  margin: 2rem;
+  width: 10%;
+  letter-spacing: 0.02em;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+.difficulty button:hover {
+  background: black;
+  color: var(--theme);
+}
+/* OVERFLOW HIDDEN here is making sure that when mole's top is 100% which means it is inside the hole it is not shown, as in the the mole inside is not shown */
+.hole {
+  flex: 1 0 33.33%;
+  overflow: hidden;
+  position: relative;
+}
+/* content:"" helps in adding the background  */
+.hole::after {
+  display: block;
+  background: url(dirt.svg) bottom center no-repeat;
+  background-size: contain;
+  content: "";
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  z-index: 2;
+  bottom: -30px;
+}
+.mole {
+  background: url("mole.svg") bottom center no-repeat;
+  background-size: 60%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s;
+}
+.hole.up .mole {
+  top: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    text-align: center;
+  }
+  h1 {
+    font-size: 2rem;
+    padding-left: 2rem;
+  }
+  .btn-style {
+    padding: 0.5rem;
+    font-family: "Amatic SC", cursive;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    border-radius: 0.5rem;
+    width: 25%;
+    transition: all 0.2s ease;
+  }
+  .btn-style:hover {
+    background: black;
+    color: white;
+  }
+  .game {
+    width: 360px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+  .difficulty button {
+    background: none;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Amatic SC", cursive;
+    padding: 0.5rem;
+    margin: 1rem 0.5rem;
+    width: 25%;
+    letter-spacing: 0.02em;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+  }
+  .difficulty button:hover {
+    background: black;
+    color: var(--theme);
+  }
+  /* OVERFLOW HIDDEN here is making sure that when mole's top is 100% which means it is inside the hole it is not shown, as in the the mole inside is not shown */
+  .hole {
+    flex: 1 0 33.33%;
+    overflow: hidden;
+    position: relative;
+  }
+  /* content:"" helps in adding the background  */
+  .hole::after {
+    display: block;
+    background: url(dirt.svg) bottom center no-repeat;
+    background-size: contain;
+    content: "";
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    z-index: 2;
+    bottom: -30px;
+  }
+  .mole {
+    background: url("mole.svg") bottom center no-repeat;
+    background-size: 60%;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s;
+  }
+  .hole.up .mole {
+    top: 0;
+  }
+}
